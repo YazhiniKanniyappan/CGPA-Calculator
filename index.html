@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+          crossorigin="anonymous">
+    <style>
+         body{
+            font-family:'Times New Roman', Times, serif;
+         }
+
+         #table{
+            max-width: 500px;
+            margin: 0 auto;
+            display: none;
+         }
+         #main{
+            display: flex;
+         }
+          #result-div{
+            width: 400px;
+            text-align: center;
+            margin: 10px auto;
+            display: none;
+         } 
+         #reset-btn{
+            display: none;
+         }
+
+    </style>
+</head>
+<body>
+    <h1 class="m-2 text-center fw-bold">GPA CALCULATOR</h1>
+    <div id="main" class="container-fluid d-flex flex-column align-items-center justfy-content-center">
+        <div>
+        <div id="container" class="ctnr container-fluid d-flex flex-row m-3">
+            <label for="grade" class="form-label m-2 fw-bold">Grade:</label>
+            <select name="select" class="form-select grade">
+                <option value="grade" selected disabled>grade</option>                
+                <option value="O">O</option>                
+                <option value="A+">A+</option>                
+                <option value="A">A</option>                
+                <option value="B+">B+</option>                
+                <option value="B">B</option>                
+                <option value="C">C</option>                
+                <option value="U">U</option>               
+            </select>
+            <label for="credit" class="form-label m-2 fw-bold">Credit:</label>
+            <select name="credit" class="form-select credit">
+                <option value="credit" selected disabled>credit</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+         </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-center justify-content-center ">
+      <button class="btn btn-success fw-bold m-2" id="btn"  onclick="addSub()">Add subject</button>
+      <button class="btn btn-danger fw-bold m-2" id="remove-btn" onclick="removeSub()">Remove subject</button>
+      <button class="btn btn-primary fw-bold m-2" id="calculate-btn" onclick="calculate()">Calculate</button>
+    </div>
+    
+    <div id="table" class="table-responsive">
+        <table  class="table table-striped table-bordered align-middle">
+        <thead>
+            <tr>
+              <th>Subjects</th>
+              <th>Grade</th>
+              <th>Gradepoints</th>
+              <th>Credit</th>
+            </tr>
+        </thead>
+        <tbody id="result-table" class=""></tbody>
+            
+        </table>
+    </div>
+    <div id="result-div"></div>
+    <div class="d-flex justify-content-center">
+        <button id="reset-btn" class="btn btn-danger fw-bold m-4">Reset</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
